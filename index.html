@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#f2f7ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="description" content="カメラでからだのポーズをまねする、iPad向けのやさしいゲーム。">
+<title>まねっこ ポーズ！ | からだで あそぼう</title>
+<style>
+:root{--ink:#17324d;--muted:#526b85;--blue:#3974e2;--yellow:#ffe69b;--mint:#dcf6ed;--rose:#ffe6e9;--line:#d8e5f1;--shadow:0 14px 42px #1b4c7721}*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;-webkit-text-size-adjust:100%;touch-action:manipulation}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 5% 2%,#e5f5ff 0,transparent 36%),radial-gradient(ellipse at 95% 98%,#fff5d8 0,transparent 38%),#f5f8fc;min-height:100dvh}button,select{font:inherit;cursor:pointer}button:focus-visible,select:focus-visible{outline:4px solid #efaf35;outline-offset:3px}button{border:0}button:disabled{opacity:.55;cursor:default}.hidden{display:none!important}.app{max-width:1380px;min-height:100dvh;margin:auto;padding:clamp(12px,2vw,30px)}.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.brand{font-weight:900;font-size:clamp(19px,2.7vw,30px);letter-spacing:.025em}.brand-icon{background:#fff;box-shadow:0 3px 15px #123b6410;display:inline-grid;place-items:center;border-radius:15px;width:44px;height:44px;margin-right:8px}.privacy{font-weight:700;color:#486480;font-size:clamp(11px,1.4vw,15px);background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px}.panel{background:#fff;border:1px solid #dfe9f5;border-radius:28px;box-shadow:var(--shadow)}.start-screen{max-width:950px;margin:clamp(12px,5vh,52px) auto 0;padding:clamp(22px,4.5vw,54px);text-align:center}.eyebrow{color:#3f76c8;font-size:16px;font-weight:900;letter-spacing:.18em}.hero-title{margin:10px auto 16px;font-size:clamp(40px,6.2vw,74px);font-weight:1000;letter-spacing:.035em;line-height:1.22}.hero-title .accent{color:var(--blue)}.lead{font-size:clamp(18px,2vw,23px);line-height:1.7;font-weight:800;margin:0 auto 20px;max-width:760px}.example-mini{margin:0 auto 20px;display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,40px);background:#f3f8ff;border-radius:24px;padding:18px 18px 10px;max-width:710px}.mini-pose{max-width:210px;width:32%;min-width:95px;aspect-ratio:1}.example-hint{font-size:clamp(17px,2.4vw,27px);font-weight:950;line-height:1.65;text-align:left}.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 0 24px}.pill{border-radius:999px;background:#f0f6ff;color:#3b608a;padding:9px 15px;font-weight:850}.settings{display:flex;flex-wrap:wrap;justify-content:center;align-items:end;gap:16px;margin:0 auto 21px}.setting{display:grid;text-align:left;gap:7px;font-weight:900;font-size:15px}.setting select{border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:13px;min-width:185px;padding:12px;font-weight:800;font-size:17px}.btn{min-height:54px;border-radius:18px;padding:12px 23px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:clamp(17px,1.8vw,22px);font-weight:950;transition:transform .12s ease,background .15s}.btn:active{transform:scale(.97)}.btn-primary{color:#fff;background:var(--blue);box-shadow:0 8px 0 #2354b6}.btn-primary:active{box-shadow:0 3px 0 #2354b6;transform:translateY(5px)}.btn-soft{background:#edf4ff;color:#2b61b9}.btn-white{background:#fff;border:2px solid #c9ddef;color:var(--ink)}.btn-tiny{min-height:43px;padding:9px 14px;font-size:15px;border-radius:13px}.start-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.tiny-note{margin:23px auto 0;color:#61738a;font-size:13px;line-height:1.6;max-width:690px}.game-screen{display:flex;flex-direction:column;gap:12px}.game-toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.game-progress{display:flex;align-items:center;gap:12px;flex:1;min-width:210px}.level{font-weight:1000;font-size:clamp(19px,2.7vw,30px);white-space:nowrap}.meter{height:15px;border-radius:30px;background:#dceaf8;flex:1;overflow:hidden}.meter-fill{width:0;height:100%;background:linear-gradient(90deg,#4ed9be,#449df6);transition:width .25s}.score{font-size:clamp(18px,2.4vw,27px);white-space:nowrap;font-weight:1000;background:#fff;border:2px solid var(--line);border-radius:15px;padding:9px 16px}.arena{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(380px,1.58fr);gap:clamp(12px,1.7vw,24px);align-items:stretch;min-height:0}.pose-card{padding:clamp(15px,2.3vw,28px);background:linear-gradient(145deg,#fffdf4,#fff5d8);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;position:relative;overflow:hidden}.section-eyebrow{background:#fff;display:inline-block;padding:8px 17px;border-radius:999px;color:#ae6b18;font-size:15px;font-weight:950}.pose-name{margin:14px auto 3px;font-size:clamp(24px,3.2vw,45px);text-align:center;line-height:1.25;font-weight:1000}.pose-help{color:#7d6237;font-weight:850;font-size:clamp(14px,1.5vw,20px);text-align:center;min-height:25px}.pose-figure{width:min(100%,360px);flex:1;max-height:380px;min-height:190px;margin:auto;display:grid;place-items:center}.pose-figure svg{width:100%;height:100%;max-height:360px}.camera-card{background:#0b1f38;border:5px solid #fff;border-radius:27px;box-shadow:var(--shadow);position:relative;min-height:330px;overflow:hidden;aspect-ratio:4/3}.camera-card video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);position:absolute;inset:0;background:#101f36}.camera-card canvas{position:absolute;inset:0;width:100%;height:100%;transform:scaleX(-1);pointer-events:none}.camera-state{position:absolute;inset:auto 12px 12px;display:flex;align-items:center;justify-content:space-between;gap:9px}.camera-indicator{border-radius:13px;background:#102f58df;color:#fff;padding:9px 13px;font-weight:850;font-size:clamp(12px,1.4vw,17px);text-align:left;backdrop-filter:blur(8px)}.hold-gauge{width:min(100%,220px);height:17px;border:2px solid #ffffff8c;background:#ffffff55;border-radius:100px;overflow:hidden}.hold-fill{width:0;height:100%;background:#6fffbe;transition:width .12s linear}.camera-loading{position:absolute;inset:0;background:#0c2244ed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:13px;color:#fff;text-align:center;padding:25px;font-weight:900;font-size:clamp(17px,2vw,25px);z-index:2}.camera-loading small{font-size:14px;font-weight:500;opacity:.9}.spinner{width:44px;height:44px;border:5px solid #ffffff50;border-top-color:#9aeccd;border-radius:100%;animation:spin .9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.status-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.feedback{flex:1;background:#fff;padding:12px 17px;border:1px solid var(--line);border-radius:16px;min-height:55px;font-size:clamp(16px,1.7vw,23px);font-weight:950;display:flex;align-items:center;gap:11px}.feedback span.emoji{font-size:26px}.game-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.teacher-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.finish-screen{max-width:740px;margin:3vh auto 0;text-align:center;padding:clamp(22px,4vw,50px)}.finish-star{font-size:70px}.finish-title{font-weight:1000;font-size:clamp(31px,5vw,54px);margin:4px 0}.finish-score{font-weight:1000;font-size:clamp(35px,5vw,55px);color:#275bbf;margin:8px}.finish-note{font-size:20px;line-height:1.6;font-weight:800;margin:18px 0 29px}.confetti-layer{pointer-events:none;position:fixed;inset:0;z-index:25;overflow:hidden}.confetti{position:absolute;top:-20px;width:13px;height:25px;border-radius:4px;animation:fall 1.45s ease-in forwards;transform:rotate(20deg)}@keyframes fall{to{top:107vh;transform:translateX(70px) rotate(640deg);opacity:.4}}.success-pop{pointer-events:none;position:fixed;left:50%;top:45%;transform:translate(-50%,-50%) scale(.8);background:#fffdec;color:#1b5bba;border:8px solid #fff7b5;box-shadow:0 15px 65px #0529516e;border-radius:28px;padding:24px 48px;text-align:center;z-index:20;font-weight:1000;font-size:clamp(28px,5vw,65px);animation:pop .85s ease-out forwards}@keyframes pop{15%{transform:translate(-50%,-50%) scale(1.14)}85%{opacity:1}100%{opacity:0;transform:translate(-50%,-65%) scale(1.02)}}.offline-banner{border-radius:15px;background:#fff0dd;color:#713d19;font-weight:800;text-align:center;padding:14px;margin-top:13px}.loader-detail{max-width:350px}label.check{display:flex;align-items:center;gap:8px;font-weight:850;font-size:14px;padding:8px 14px;background:#fff;border:1px solid var(--line);border-radius:14px}label.check input{width:20px;height:20px;accent-color:var(--blue)}.error-panel{max-width:750px;margin:18px auto;padding:25px;text-align:center}.error-panel strong{font-size:24px}.error-panel p{line-height:1.8}.error-panel .btn{margin:7px}.countdown{font-size:40px;font-weight:1000;color:#fff}.game-footnote{font-size:12px;color:#5e738b;text-align:center;padding:5px}.demo-label{background:#d47612;color:#fff;border-radius:7px;padding:3px 8px;font-size:12px;white-space:nowrap}body.zoom .app{max-width:none;padding:8px}body.zoom .arena{grid-template-columns:1fr!important}body.zoom .pose-card{max-width:950px;margin:0 auto;width:100%;min-height:110px;display:grid;grid-template-columns:130px 1fr 120px;grid-template-rows:1fr;align-items:center;gap:8px;padding:7px 14px}body.zoom .section-eyebrow{grid-column:1;grid-row:1}body.zoom .pose-name{grid-column:2;grid-row:1;margin:0;font-size:clamp(24px,3vw,35px)}body.zoom .pose-help{display:none}body.zoom .pose-figure{grid-column:3;grid-row:1;min-height:95px;max-height:110px;max-width:115px;margin:0}body.zoom .camera-card{width:min(100%,950px);margin:0 auto;max-height:70vh;min-height:280px}body.zoom .topbar{margin-bottom:5px}body.zoom .pose-figure{max-height:45vh}body.zoom .arena{gap:8px}body.zoom .game-footnote{display:none}@media(max-width:850px){.arena{grid-template-columns:1fr;gap:10px}.pose-card{padding:12px;display:grid;grid-template-columns:minmax(160px,.8fr) 1.3fr;grid-template-rows:auto auto;gap:5px 10px;align-items:center;min-height:185px}.section-eyebrow{grid-column:1;grid-row:1;font-size:12px;justify-self:center}.pose-name{grid-column:1;grid-row:2;margin:0;font-size:clamp(22px,4.4vw,34px)}.pose-help{display:none}.pose-figure{grid-column:2;grid-row:1 / 3;width:100%;min-height:160px;max-height:190px}.camera-card{aspect-ratio:4/3;min-height:230px;max-height:55vh}.status-row{align-items:stretch}.feedback{min-width:100%}.game-actions{width:100%;justify-content:space-around}.game-actions .btn{flex:1}.game-footnote{display:none}}@media(min-width:851px) and (max-height:700px){.pose-figure{max-height:300px}.camera-card{max-height:66vh}.pose-card{padding:13px}.pose-name{margin:7px 0}}@media(max-width:480px){.app{padding:9px}.topbar{margin-bottom:9px}.privacy{font-size:10px;padding:7px}.brand-icon{width:35px;height:35px}.brand{font-size:19px}.start-screen{padding:22px 14px}.hero-title{font-size:39px}.example-mini{gap:5px;padding:9px}.mini-pose{min-width:90px}.example-hint{font-size:17px}.setting{width:44%}.setting select{min-width:0;width:100%}.game-toolbar{gap:7px}.level{font-size:18px}.score{font-size:18px;padding:6px 9px}.pose-card{min-height:146px;grid-template-columns:minmax(150px,1fr) 1fr}.pose-figure{min-height:142px;max-height:142px}.camera-card{min-height:210px}.camera-indicator{font-size:11px;padding:6px 9px}}@media(prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+
+.pose-catalog{margin:20px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px;background:#f1f6ff;padding:15px;border-radius:20px;text-align:center}
+.catalog-tile{background:white;border:1px solid #d9e5f3;border-radius:14px;padding:8px 6px;position:relative;display:grid;gap:2px;justify-items:center;align-content:center;font-size:14px;min-width:0}
+.catalog-tile b{font-size:clamp(12px,1.7vw,15px)}.catalog-image{height:135px;max-width:115px;display:grid;place-items:center}.catalog-image svg{width:100%;height:100%;display:block}
+.catalog-num{position:absolute;top:6px;left:8px;font-size:12px;color:#4064a3;font-weight:900}
+@media(max-width:480px){.pose-catalog{grid-template-columns:repeat(2,minmax(0,1fr));padding:8px;gap:8px}.catalog-image{height:118px}.settings{gap:9px}.setting{width:46%}.setting select{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar"><div class="brand"><span class="brand-icon">🤸</span>まねっこ ポーズ！</div><div class="privacy">🔒 カメラは このたんまつだけ</div></header>
+
+  <section id="startScreen" class="panel start-screen" aria-label="はじめのがめん">
+    <div class="eyebrow">からだで あそぼう！</div>
+    <h1 class="hero-title">おてほんの <span class="accent">ポーズ</span>を<br>まねしよう！</h1>
+    <p class="lead">カメラに うつって、てや うでを うごかそう。<br>おなじ ポーズが できたら、<strong>はなまる！</strong></p>
+    <div class="example-mini"><div id="miniFigure" class="mini-pose" aria-hidden="true"></div><div class="example-hint">① おてほんを みる<br>② からだで まねする<br>③ できたら ⭐ ゲット！</div></div>
+    <div class="pills"><span class="pill">📷 インカメラ</span><span class="pill">🪑 すわったまま OK</span><span class="pill">🔊 おとつき</span><span class="pill">🎯 20しゅるいの ポーズ</span></div>
+    <div class="settings">
+      <label class="setting">もんだいの かず<select id="roundCount"><option value="3">3もん</option><option value="5" selected>5もん</option><option value="8">8もん</option><option value="12">12もん</option><option value="20">20もん</option></select></label>
+      <label class="setting">ポーズの しゅるい<select id="posePool"><option value="all" selected>いろいろ（20しゅるい）</option><option value="basic">やさしい（10しゅるい）</option></select></label><label class="setting">むずかしさ<select id="difficulty"><option value="easy" selected>やさしい</option><option value="normal">ふつう</option></select></label>
+      <label class="check"><input id="teacherSetting" type="checkbox" checked> せんせいボタンを だす</label>
+    </div>
+    <div class="start-actions"><button id="catalogBtn" class="btn btn-white" aria-expanded="false" aria-controls="poseCatalog">🖼️ ポーズずかん（20こ）</button><button id="startBtn" class="btn btn-primary">📷 カメラで はじめる</button><button id="demoBtn" class="btn btn-soft">🎮 おためし（カメラなし）</button></div>
+    <div id="poseCatalog" class="pose-catalog hidden" aria-label="ポーズずかん"></div>
+    <p class="tiny-note">iPadは できれば よこむきにして、たてかけて つかおう。<br>はじめての ときは カメラの「きょか」を おしてね。<br>※ カメラの えいぞうを ろくが・ほぞん・そうしん するしくみは ありません。</p>
+  </section>
+
+  <section id="gameScreen" class="game-screen hidden" aria-label="ゲームがめん">
+    <div class="game-toolbar"><div class="game-progress"><div id="roundLabel" class="level">1 / 5 もん</div><div class="meter" aria-label="しんちょく"><div id="roundMeter" class="meter-fill"></div></div></div><div id="scoreLabel" class="score">⭐ 0 こ</div></div>
+    <div class="arena">
+      <div class="panel pose-card"><span class="section-eyebrow">✨ おてほん ✨</span><h2 class="pose-name" id="poseTitle">ばんざい！</h2><p class="pose-help" id="poseHelp">りょうてを うえに あげよう</p><div id="poseFigure" class="pose-figure" aria-label="ポーズのおてほん"></div></div>
+      <div class="camera-card" id="cameraCard"><video id="cameraVideo" autoplay muted playsinline webkit-playsinline aria-label="カメラのえいぞう"></video><canvas id="poseCanvas" aria-hidden="true"></canvas><div id="cameraLoading" class="camera-loading"><div class="spinner"></div><div id="loaderText" class="loader-detail">カメラを じゅんびしているよ…</div><small>はじめは すこし じかんが かかるよ</small></div><div class="camera-state"><span id="cameraIndicator" class="camera-indicator">📷 からだを うつそう</span><div class="hold-gauge" aria-label="ポーズをたもつメーター"><div id="holdFill" class="hold-fill"></div></div></div></div>
+    </div>
+    <div class="status-row"><div class="feedback" aria-live="polite"><span class="emoji" id="feedbackEmoji">👀</span><span id="feedbackText">おてほんを まねしてね！</span></div><div class="game-actions"><button id="teacherSuccess" class="btn btn-soft btn-tiny">🌸 できた！（せんせい）</button><button id="skipBtn" class="btn btn-white btn-tiny">つぎの もんだい ▶</button><button id="soundBtn" class="btn btn-white btn-tiny" aria-pressed="true">🔊 おと</button><button id="zoomBtn" class="btn btn-white btn-tiny">⛶ おおきく</button><button id="quitBtn" class="btn btn-white btn-tiny">✕ おわる</button></div></div>
+    <div id="demoNotice" class="offline-banner hidden">🎮 おためしモード：カメラの AIは うごいていません。「できた！」ボタンで すすめられます。</div>
+    <p class="game-footnote">💡 あしもとは あんぜんに。カメラは がめんを とじると ていしします。</p>
+  </section>
+
+  <section id="finishScreen" class="panel finish-screen hidden"><div class="finish-star" aria-hidden="true">🏆</div><h2 class="finish-title">がんばったね！</h2><div id="finishScore" class="finish-score">⭐ 5 / 5 こ</div><div id="finishNote" class="finish-note">とても じょうずに できたね！</div><div class="start-actions"><button id="retryBtn" class="btn btn-primary">🔁 もう いっかい！</button><button id="homeBtn" class="btn btn-white">🏠 さいしょに もどる</button></div></section>
+  <section id="errorScreen" class="panel error-panel hidden"><div style="font-size:55px">🛠️</div><p><strong>カメラを じゅんびできなかったよ</strong></p><p id="errorText">せんせいと いっしょに かくにんしてね。</p><div class="start-actions"><button id="errorRetry" class="btn btn-primary">🔁 もういちど</button><button id="errorDemo" class="btn btn-soft">🎮 おためしで あそぶ</button><button id="errorHome" class="btn btn-white">🏠 もどる</button></div></section>
+</div>
+<div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+<script type="module">
+'use strict';
+// まねっこ ポーズ！  iPad Safari + MediaPipe Pose Landmarker
+// AI処理は端末内。カメラ映像を外部に送信・保存するコードはありません。
+// 初回のモデル読み込みにインターネット接続が必要です。
+const $ = id => document.getElementById(id);
+const refs = {start:$('startScreen'),game:$('gameScreen'),finish:$('finishScreen'),error:$('errorScreen'),video:$('cameraVideo'),canvas:$('poseCanvas'),loading:$('cameraLoading')};
+const VERSION='0.10.22';
+const ENGINE=`https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${VERSION}/+esm`;
+const WASM=`https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${VERSION}/wasm`;
+const MODEL='https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task';
+const ICONPOSES={
+  up:{name:'ばんざい！',help:'りょうてを うえに あげよう',left:[[87,116],[74,79],[66,38]],right:[[153,116],[166,79],[174,38]],basic:true},
+  airplane:{name:'ひこうき！',help:'りょうてを よこに ひろげよう',left:[[87,116],[47,124],[15,122]],right:[[153,116],[193,124],[225,122]],basic:true},
+  one:{name:'かたて ばんざい！',help:'どちらかの てを うえに あげよう',left:[[87,116],[73,79],[67,38]],right:[[153,116],[160,160],[166,203]],basic:true},
+  down:{name:'てを おろそう！',help:'りょうてを したに おろそう',left:[[87,116],[84,160],[84,203]],right:[[153,116],[156,160],[156,203]],basic:true},
+  together:{name:'てを あわせよう！',help:'おなかの まえで てを あわせよう',left:[[87,116],[60,158],[116,163]],right:[[153,116],[180,158],[124,163]],basic:true},
+  shoulders:{name:'かたに タッチ！',help:'りょうてを かたの ちかくに',left:[[87,116],[62,165],[92,122]],right:[[153,116],[178,165],[148,122]],basic:true},
+  head:{name:'あたまに タッチ！',help:'りょうてを あたまに あてよう',left:[[87,116],[50,105],[100,62]],right:[[153,116],[190,105],[140,62]],basic:true},
+  roof:{name:'おやまの ポーズ！',help:'あたまの うえで てを あわせよう',left:[[87,116],[60,64],[117,15]],right:[[153,116],[180,64],[123,15]],basic:true},
+  hips:{name:'こしに て！',help:'りょうてを こしに あてよう',left:[[87,116],[47,157],[93,184]],right:[[153,116],[193,157],[147,184]],basic:true},
+  vee:{name:'おおきな V！',help:'りょうてを ななめ うえに ひろげよう',left:[[87,116],[55,75],[19,26]],right:[[153,116],[185,75],[221,26]],basic:true},
+  oneSide:{name:'かたて ひこうき！',help:'かたてを よこに ひろげよう',left:[[87,116],[47,124],[15,122]],right:[[153,116],[159,160],[163,203]]},
+  downWide:{name:'ななめ した！',help:'りょうてを ななめ したに ひろげよう',left:[[87,116],[55,167],[19,209]],right:[[153,116],[185,167],[221,209]]},
+  angle:{name:'Lの ポーズ！',help:'かたては うえ、かたては よこ',left:[[87,116],[69,68],[66,20]],right:[[153,116],[195,121],[225,121]]},
+  muscle:{name:'ちからもち！',help:'ひじを まげて ちからこぶ！',left:[[87,116],[30,137],[68,72]],right:[[153,116],[210,137],[172,72]]},
+  cheeks:{name:'ほっぺに タッチ！',help:'りょうてを ほっぺの ちかくに',left:[[87,116],[48,146],[98,83]],right:[[153,116],[192,146],[142,83]]},
+  oneHead:{name:'かたてで あたま！',help:'かたてを あたまに あてよう',left:[[87,116],[47,110],[101,62]],right:[[153,116],[159,160],[163,203]]},
+  oneHip:{name:'かたてを こしに！',help:'かたてを こしに、もう かたては した',left:[[87,116],[45,158],[92,184]],right:[[153,116],[158,163],[164,207]]},
+  cross:{name:'うでを クロス！',help:'むねの まえで うでを クロス',left:[[87,116],[49,150],[165,149]],right:[[153,116],[191,150],[75,149]]},
+  hipUp:{name:'こしと ばんざい！',help:'かたては こし、かたては うえ',left:[[87,116],[70,78],[60,29]],right:[[153,116],[192,158],[147,184]]},
+  headSide:{name:'あたまと ひこうき！',help:'かたては あたま、かたては よこ',left:[[87,116],[48,108],[101,63]],right:[[153,116],[194,125],[224,126]]}
+};
+const POSE_KEYS=Object.keys(ICONPOSES);
+const BASIC_KEYS=POSE_KEYS.filter(k=>ICONPOSES[k].basic);
+let detector=null, cameraStream=null, lastVideoTime=-1, frameId=0, running=false, demo=false, successLocked=false;
+let positions=[], round=0, score=0, holdStart=0, missSince=0, lastTick=0, sound=true, audio=null, modelLoading=null, difficulty='easy', teacherMode=true;
+const ctx=refs.canvas.getContext('2d');
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const rand=a=>a[Math.floor(Math.random()*a.length)];
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+function show(section){for(const e of [refs.start,refs.game,refs.finish,refs.error])e.classList.toggle('hidden',e!==section)}
+function svgPose(key){const p=ICONPOSES[key];const line=(a,b,w=16)=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#3478de" stroke-width="${w}" stroke-linecap="round"/>`;const limbs=[...p.left,...p.right];return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 265" role="img" aria-label="${p.name}"><ellipse cx="120" cy="249" rx="83" ry="11" fill="#ead9a7" opacity=".45"/><path d="M95 185 L97 231 M145 185 L143 231" fill="none" stroke="#2970cc" stroke-width="17" stroke-linecap="round"/><path d="M88 113 Q120 100 152 113 L150 190 Q120 207 90 190 Z" fill="#3d9eed" stroke="#266bb5" stroke-width="4"/><rect x="103" y="92" width="34" height="22" rx="10" fill="#ffd3a4"/><circle cx="120" cy="63" r="39" fill="#ffdbab" stroke="#dfae7f" stroke-width="3"/><path d="M83 56 Q87 20 123 22 Q156 23 159 58 Q146 33 123 38 Q93 31 83 56" fill="#213e70"/><circle cx="107" cy="64" r="3.5" fill="#263c59"/><circle cx="133" cy="64" r="3.5" fill="#263c59"/><path d="M108 80 Q120 93 132 80" fill="none" stroke="#a95954" stroke-width="3.5" stroke-linecap="round"/>${line(p.left[0],p.left[1])}${line(p.left[1],p.left[2])}${line(p.right[0],p.right[1])}${line(p.right[1],p.right[2])}<circle cx="${p.left[2].join('" cy="')}" r="11" fill="#ffd4a6"/><circle cx="${p.right[2].join('" cy="')}" r="11" fill="#ffd4a6"/><circle cx="97" cy="233" r="11" fill="#264e8c"/><circle cx="143" cy="233" r="11" fill="#264e8c"/></svg>`}
+$('miniFigure').innerHTML=svgPose('up');
+function makeCatalog(){
+ const gallery=$('poseCatalog');
+ gallery.innerHTML=POSE_KEYS.map((key,i)=>`<div class="catalog-tile"><span class="catalog-num">${i+1}</span><div class="catalog-image">${svgPose(key)}</div><b>${ICONPOSES[key].name}</b></div>`).join('');
+}
+$('catalogBtn').addEventListener('click',()=>{
+ const gallery=$('poseCatalog');const opening=gallery.classList.contains('hidden');
+ if(opening&&!gallery.hasChildNodes())makeCatalog();
+ gallery.classList.toggle('hidden',!opening);
+ $('catalogBtn').setAttribute('aria-expanded',String(opening));
+ $('catalogBtn').textContent=opening?'✕ ポーズずかんを とじる':'🖼️ ポーズずかん（20こ）';
+});
+function shuffleRounds(count,pool=POSE_KEYS){const result=[];while(result.length<count){const bag=[...pool];for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]]}for(const pose of bag){if(result.length>=count)break;if(pose!==result[result.length-1])result.push(pose)}}return result}
+function announce(text,emoji='👀'){$('feedbackText').textContent=text;$('feedbackEmoji').textContent=emoji}
+function soundSuccess(){if(!sound)return;try{audio??=new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume();const start=audio.currentTime;[523,659,784].forEach((f,i)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(audio.destination);const t=start+i*.12;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.17,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+.2);o.start(t);o.stop(t+.21)})}catch(e){}}
+function confetti(){const layer=$('confettiLayer');layer.replaceChildren();for(let i=0;i<25;i++){const part=document.createElement('i');part.className='confetti';part.style.left=`${Math.random()*100}%`;part.style.animationDelay=`${Math.random()*.28}s`;part.style.background=rand(['#fbc65d','#63d8b7','#5d8ef5','#ff7897']);part.style.width=8+Math.random()*8+'px';layer.appendChild(part)}setTimeout(()=>layer.replaceChildren(),1800)}
+function popSuccess(){const el=document.createElement('div');el.className='success-pop';el.textContent=rand(['🌸 はなまる！','⭐ せいかい！','🎉 やったね！']);document.body.appendChild(el);setTimeout(()=>el.remove(),900)}
+function prepareRound(){holdStart=0;missSince=0;successLocked=false;$('holdFill').style.width='0%';$('roundLabel').textContent=`${round+1} / ${positions.length} もん`;$('roundMeter').style.width=`${100*(round/positions.length)}%`;$('scoreLabel').textContent=`⭐ ${score} こ`;const p=ICONPOSES[positions[round]];$('poseTitle').textContent=p.name;$('poseHelp').textContent=p.help;$('poseFigure').innerHTML=svgPose(positions[round]);announce(demo?'せんせいが「できた！」を おしてね！':'おてほんを まねしてね！','👀');$('cameraIndicator').textContent=demo?'🎮 おためしモード':'📷 からだを うつそう';}
+async function stopCamera(){running=false;cancelAnimationFrame(frameId);if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null}refs.video.pause();refs.video.srcObject=null;ctx.clearRect(0,0,refs.canvas.width,refs.canvas.height)}
+async function loadDetector(){if(detector)return detector;if(modelLoading)return modelLoading;modelLoading=(async()=>{const mod=await import(ENGINE);const vision=await mod.FilesetResolver.forVisionTasks(WASM);return await mod.PoseLandmarker.createFromOptions(vision,{baseOptions:{modelAssetPath:MODEL,delegate:'CPU'},runningMode:'VIDEO',numPoses:1,minPoseDetectionConfidence:.45,minPosePresenceConfidence:.45,minTrackingConfidence:.45})})();try{detector=await modelLoading;return detector}catch(err){modelLoading=null;throw err}}
+async function boot(useDemo=false){await stopCamera();demo=useDemo;difficulty=$('difficulty').value;teacherMode=$('teacherSetting').checked;positions=shuffleRounds(Number($('roundCount').value),$('posePool').value==='basic'?BASIC_KEYS:POSE_KEYS);round=0;score=0;lastVideoTime=-1;lastTick=0;show(refs.game);prepareRound();$('teacherSuccess').classList.toggle('hidden',!teacherMode&&!demo);$('demoNotice').classList.toggle('hidden',!demo);refs.loading.classList.remove('hidden');$('loaderText').textContent=demo?'おためしを じゅんびしているよ…':'カメラを じゅんびしているよ…';
+ if(demo){refs.loading.classList.add('hidden');refs.video.style.opacity='0';refs.canvas.style.opacity='0';$('cameraCard').style.background='radial-gradient(circle at 40% 40%,#435f9c,#0b1f38)';$('cameraIndicator').textContent='🎮 カメラなし';return}
+ refs.video.style.opacity='1';refs.canvas.style.opacity='1';$('cameraCard').style.background='#0b1f38';
+ try{
+   if(!navigator.mediaDevices?.getUserMedia){throw new Error('カメラへのアクセスができません。SafariでHTTPSのページを開いてください。')}
+   cameraStream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:'user',width:{ideal:640},height:{ideal:480},frameRate:{ideal:24,max:30}}});
+   refs.video.srcObject=cameraStream;await refs.video.play();
+   $('loaderText').textContent='AIが ポーズを おぼえているよ…';
+   await loadDetector();
+   if(refs.game.classList.contains('hidden')){await stopCamera();return}
+   refs.loading.classList.add('hidden');running=true;frameId=requestAnimationFrame(processVideo);
+ }catch(err){console.error('Camera/pose initialization failed:',err);await stopCamera();show(refs.error);let message='カメラの きょかを かくにんしてね。Safariで もういちど ひらいてみよう。';if(err?.name==='NotAllowedError')message='カメラの きょかが されていません。Safariの せっていで カメラを「きょか」に してね。';else if(err?.name==='NotFoundError')message='カメラが みつかりません。ほかの アプリで カメラを つかっていないか かくにんしてね。';else if(err?.message?.includes('アクセス'))message=err.message;else message='AIの よみこみに しっぱいしました。インターネットに つないで Safariで もういちど ためしてね。';$('errorText').textContent=message}
+}
+function cameraCanvasResize(){const w=refs.video.videoWidth||640,h=refs.video.videoHeight||480;if(refs.canvas.width!==w||refs.canvas.height!==h){refs.canvas.width=w;refs.canvas.height=h}return [w,h]}
+const valid=(p,i,limit=.34)=>p[i]&&p[i].visibility!==undefined?p[i].visibility>limit:!!p[i];
+function checkPose(points,type){
+ const ids=[11,12,15,16];if(!ids.every(i=>valid(points,i)))return false;
+ const L=points[11],R=points[12],lw=points[15],rw=points[16];
+ const el=points[13],er=points[14],hipL=points[23],hipR=points[24];
+ const width=Math.max(.075,Math.hypot(L.x-R.x,L.y-R.y));
+ const shY=(L.y+R.y)/2,midX=(L.x+R.x)/2;
+ const torso=(valid(points,23,.2)&&valid(points,24,.2))?Math.max(.115,(hipL.y+hipR.y)/2-shY):Math.max(.16,width*1.05);
+ const easy=difficulty==='easy'; const lenient=easy?1.2:1;
+ const up=(w,s)=>w.y<s.y-(easy?.20:.29)*torso && w.y<nose.y-(easy?.06:.14)*torso;
+ const down=(w,s)=>w.y>s.y+(easy?.35:.47)*torso;
+ const straight=(w,s,e)=>valid(points,e)&&Math.abs(points[e].x-s.x)<(easy?.42:.32)*width&&Math.abs(w.x-s.x)<(easy?.45:.36)*width;
+ const side=(w,s)=>Math.abs(w.x-s.x)>(easy?.35:.48)*width && Math.abs(w.y-s.y)<(easy?.60:.43)*torso && (w.x-midX)*(s.x-midX)>0;
+ const near=(a,b,lim)=>Math.hypot(a.x-b.x,a.y-b.y)<lim*width;
+ const farX=(w,s,ratio)=>Math.abs(w.x-s.x)>ratio*width;
+ const nose=valid(points,0,.2)?points[0]:{x:midX,y:shY-.70*torso};
+ const cheek=(w)=>Math.abs(w.y-(nose.y+.24*torso))<(easy?.30:.22)*torso && Math.abs(w.x-nose.x)<.80*width;
+ const head=(w)=>w.y>nose.y-.43*torso && w.y<nose.y+(easy?.16:.08)*torso && Math.abs(w.x-nose.x)<.70*width;
+ const aboveHead=(w)=>w.y<nose.y-(easy?.11:.2)*torso;
+ const hip=(w,h,s,e)=>valid(points,e)&&h&&Math.hypot(w.x-h.x,w.y-h.y)<(easy?.54:.43)*width && w.y>s.y+.48*torso && Math.abs(points[e].x-midX)>Math.abs(s.x-midX)+.12*width;
+ const armsSide=side(lw,L)&&side(rw,R);
+ const bothUp=up(lw,L)&&up(rw,R);
+ const bothDown=down(lw,L)&&down(rw,R);
+ const oneUp=(up(lw,L)&&down(rw,R))||(up(rw,R)&&down(lw,L));
+ const oneSide=(side(lw,L)&&down(rw,R))||(side(rw,R)&&down(lw,L));
+ const oneHead=(head(lw)&&down(rw,R))||(head(rw)&&down(lw,L));
+ const oneHip=(hip(lw,hipL,L,13)&&down(rw,R))||(hip(rw,hipR,R,14)&&down(lw,L));
+ const oneUpHip=(up(lw,L)&&hip(rw,hipR,R,14))||(up(rw,R)&&hip(lw,hipL,L,13));
+ const oneHeadSide=(head(lw)&&side(rw,R))||(head(rw)&&side(lw,L));
+ switch(type){
+   case 'up':return bothUp;
+   case 'airplane':return armsSide;
+   case 'one':return oneUp;
+   case 'down':return bothDown&&straight(lw,L,13)&&straight(rw,R,14);
+   case 'together':return near(lw,rw,easy?.78:.57)&&lw.y>shY+.08*torso&&lw.y<shY+1.02*torso&&rw.y>shY+.08*torso&&rw.y<shY+1.02*torso;
+   case 'shoulders':return near(lw,L,easy?.72:.56)&&near(rw,R,easy?.72:.56)&&Math.abs(lw.y-L.y)<.34*torso&&Math.abs(rw.y-R.y)<.34*torso;
+   case 'head':return head(lw)&&head(rw);
+   case 'roof':return bothUp&&aboveHead(lw)&&aboveHead(rw)&&near(lw,rw,easy?.55:.42);
+   case 'hips':return hip(lw,hipL,L,13)&&hip(rw,hipR,R,14);
+   case 'vee':return bothUp&&farX(lw,L,easy?.55:.70)&&farX(rw,R,easy?.55:.70)&&lw.x!==rw.x;
+   case 'oneSide':return oneSide;
+   case 'downWide':return bothDown&&farX(lw,L,easy?.61:.76)&&farX(rw,R,easy?.61:.76);
+   case 'angle':return (up(lw,L)&&side(rw,R))||(up(rw,R)&&side(lw,L));
+   case 'muscle':return valid(points,13,.22)&&valid(points,14,.22)&&lw.y<L.y-.28*torso&&rw.y<R.y-.28*torso&&
+     Math.abs(lw.x-midX)>.56*width&&Math.abs(rw.x-midX)>.56*width&&
+     Math.abs(el.x-midX)>Math.abs(lw.x-midX)+.12*width&&Math.abs(er.x-midX)>Math.abs(rw.x-midX)+.12*width&&
+     lw.y>nose.y-.25*torso&&rw.y>nose.y-.25*torso;
+   case 'cheeks':return cheek(lw)&&cheek(rw)&&Math.abs(lw.x-rw.x)>.3*width;
+   case 'oneHead':return oneHead;
+   case 'oneHip':return oneHip;
+   case 'cross':return ((lw.x-midX)*(L.x-midX)<0)&&((rw.x-midX)*(R.x-midX)<0)&&Math.abs(lw.x-rw.x)>.64*width&&
+     lw.y>shY-.1*torso&&lw.y<shY+.68*torso&&rw.y>shY-.1*torso&&rw.y<shY+.68*torso;
+   case 'hipUp':return oneUpHip;
+   case 'headSide':return oneHeadSide;
+   default:return false;
+ }
+}
+function drawSkeleton(points){const [w,h]=cameraCanvasResize();ctx.clearRect(0,0,w,h);const segment=[[11,12],[11,13],[13,15],[12,14],[14,16],[11,23],[12,24],[23,24]];const ready=[11,12,13,14,15,16,23,24];ctx.lineWidth=Math.max(4,w/115);ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#70f8cb';ctx.shadowBlur=7;ctx.shadowColor='#003759';for(const [a,b]of segment){if(!valid(points,a,.25)||!valid(points,b,.25))continue;ctx.beginPath();ctx.moveTo(points[a].x*w,points[a].y*h);ctx.lineTo(points[b].x*w,points[b].y*h);ctx.stroke()}ctx.shadowBlur=0;for(const i of ready){if(!valid(points,i,.25))continue;ctx.beginPath();ctx.arc(points[i].x*w,points[i].y*h,Math.max(4,w/92),0,Math.PI*2);ctx.fillStyle='#fff4ad';ctx.fill()}}
+function processVideo(stamp){if(!running)return;frameId=requestAnimationFrame(processVideo);if(successLocked||refs.video.readyState<2||stamp-lastTick<115)return;lastTick=stamp;
+ try{if(refs.video.currentTime===lastVideoTime)return;lastVideoTime=refs.video.currentTime;const result=detector.detectForVideo(refs.video,stamp);const pts=result?.landmarks?.[0];if(pts){drawSkeleton(pts);const ok=checkPose(pts,positions[round]);$('cameraIndicator').textContent='✅ からだが うつっているよ';if(ok){missSince=0;if(!holdStart)holdStart=stamp;const hold=difficulty==='easy'?650:1250,amount=clamp((stamp-holdStart)/hold,0,1);$('holdFill').style.width=(amount*100)+'%';announce('そのまま キープ！','✨');if(amount>=1)complete(true)}else{if(!missSince)missSince=stamp;if(stamp-missSince>230){holdStart=0;$('holdFill').style.width='0%'}announce('おてほんを みて まねしてね！','💪')}}else{ctx.clearRect(0,0,refs.canvas.width,refs.canvas.height);$('cameraIndicator').textContent='📷 からだを うつそう';holdStart=0;$('holdFill').style.width='0%';announce('もうすこし はなれて うつってね！','👀')}}catch(e){console.error('pose detection',e);announce('カメラを かくにんしてね','🛠️')}}
+async function complete(correct){if(successLocked)return;successLocked=true;holdStart=0;$('holdFill').style.width=correct?'100%':'0%';if(correct){score++;soundSuccess();popSuccess();confetti();announce('はなまる！ すごい！','🌸')}else announce('つぎの ポーズに いくよ！','➡️');$('scoreLabel').textContent=`⭐ ${score} こ`;await wait(correct?1000:230);if(refs.game.classList.contains('hidden'))return;round++;if(round>=positions.length)finishGame();else prepareRound()}
+async function finishGame(){await stopCamera();show(refs.finish);$('finishScore').textContent=`⭐ ${score} / ${positions.length} こ`;$('finishNote').textContent=score===positions.length?'ぜんぶ できたね！ とっても じょうず！':`${positions.length}もんに ちょうせんしたよ！ がんばったね！`}
+function wakeAudio(){if(!sound)return;try{audio??=new (window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume()}catch(e){}}
+$('startBtn').addEventListener('click',()=>{wakeAudio();boot(false)});$('demoBtn').addEventListener('click',()=>{wakeAudio();boot(true)});$('teacherSuccess').addEventListener('click',()=>complete(true));$('skipBtn').addEventListener('click',()=>complete(false));$('retryBtn').addEventListener('click',()=>boot(demo));$('homeBtn').addEventListener('click',async()=>{await stopCamera();show(refs.start)});$('quitBtn').addEventListener('click',async()=>{await stopCamera();show(refs.start)});$('errorRetry').addEventListener('click',()=>boot(false));$('errorDemo').addEventListener('click',()=>boot(true));$('errorHome').addEventListener('click',async()=>{await stopCamera();show(refs.start)});$('soundBtn').addEventListener('click',()=>{sound=!sound;$('soundBtn').textContent=sound?'🔊 おと':'🔇 おと なし';$('soundBtn').setAttribute('aria-pressed',String(sound))});$('zoomBtn').addEventListener('click',()=>{document.body.classList.toggle('zoom');$('zoomBtn').textContent=document.body.classList.contains('zoom')?'⤢ もどす':'⛶ おおきく'});
+window.addEventListener('pagehide',()=>stopCamera());
+window.addEventListener('visibilitychange',()=>{if(document.hidden&&running){stopCamera();show(refs.start)}});
+// テスト支援: UIに影響しない小さな純粋関数を公開
+window.__poseArcadeTest={checkPose,svgPose,shuffleRounds};
+</script>
+</body>
+</html>
